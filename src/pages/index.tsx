@@ -11,8 +11,8 @@ export default function Home() {
       </Head>
       <main>
         <h1>
-          Want to be first to speak to owners of newly-established businesses?
-          Try our direct mail service!
+          Get ahead of the game and reach new business owners first with our
+          direct mail service!
         </h1>
         <button>Enter free trial</button>
         <h2>Why use us?</h2>
