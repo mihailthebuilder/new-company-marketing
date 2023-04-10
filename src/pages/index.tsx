@@ -10,7 +10,41 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>hello world</div>
+        <h1>
+          Want to be first to speak to owners of newly-established businesses?
+          Try our direct mail service!
+        </h1>
+        <button>Enter free trial</button>
+        <h2>Why use us?</h2>
+        <p>
+          You know how important it is to be first to your customers. But it’s
+          really hard doing that when your customer is a new business owner.{" "}
+        </p>
+        <p>
+          There are millions of companies in the UK. You need to regularly go
+          through all of them to find out which have been recently incorporated.
+        </p>
+        <p>
+          Of the tens of thousands of companies you may find, you then have to
+          filter for those that match your ideal customer profile.
+        </p>
+        <p>
+          Finally, you need to figure out a way to grab their attention. You
+          can’t rely on email or phone number as they won’t be usually publicly
+          available for a newly-formed business.
+        </p>
+        <p>
+          That’s where our direct mail service comes in. All you need to do is:
+        </p>
+        <ul>
+          <li>
+            tell us the industry and geographic location of your ideal customer
+          </li>
+          <li>provide us with the copy of your direct mail</li>
+          <li>pay for the number of letters you wish to send</li>
+        </ul>
+        <p>And that’s it! We’ll do the mailing for you.</p>
+        <p>Interested? Get in touch!</p>
       </main>
     </>
   );
