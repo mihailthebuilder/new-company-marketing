@@ -20,9 +20,8 @@ export default function Home() {
             <span style={{ display: "inline-block" }}>direct mail service</span>
           </Typography>
           <Button
-            variant="contained"
+            variant="outlined"
             sx={{
-              color: "white",
               marginTop: "3rem",
               padding: "0.8rem 2rem",
               fontSize: "1.2rem",
