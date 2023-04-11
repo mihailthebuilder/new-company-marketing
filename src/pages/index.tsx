@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Container, Typography, Button } from "@mui/material";
 
 export default function Home() {
   return (
@@ -10,40 +11,54 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>
-          Get ahead of the game and reach new business owners first with our
-          direct mail service!
-        </h1>
-        <button>Enter free trial</button>
-        <h2>Why use us?</h2>
-        <p>
-          You know how important it is to be first to your customers. But it’s
-          really hard doing that when your customer is a new business owner.{" "}
-        </p>
-        <p>
-          There are millions of companies in the UK. You need to regularly go
-          through all of them to find out which have been recently incorporated.
-        </p>
-        <p>
-          Of the tens of thousands of companies you may find, you then have to
-          filter for those that match your ideal customer profile.
-        </p>
-        <p>
-          Finally, you need to figure out a way to grab their attention. You
-          can’t rely on email or phone number as they won’t be usually publicly
-          available for a newly-formed business.
-        </p>
-        <p>
-          That’s where our direct mail service comes in. All you need to do is:
-        </p>
-        <ul>
-          <li>
-            tell us the industry and geographic location of your ideal customer
-          </li>
-          <li>provide us with the copy of your direct mail</li>
-          <li>pay for the number of letters you wish to send</li>
-        </ul>
-        <p>And that’s it! We’ll do the mailing for you.</p>
+        <Container maxWidth="md" sx={{ textAlign: "center" }}>
+          <Typography variant="h1" fontSize="3rem" fontWeight="bold">
+            Be the first to speak to new business owners with our{" "}
+            <span style={{ display: "inline-block" }}>direct mail service</span>
+          </Typography>
+          <Button>Join our free trial</Button>
+        </Container>
+        <Container maxWidth="sm">
+          <Typography
+            variant="h4"
+            component="h2"
+            fontWeight="bold"
+            textAlign="center"
+          >
+            Why use us?
+          </Typography>
+          <p>
+            You know how important it is to be first to your customers. But it’s
+            really hard to do that when your customer is a new business owner.{" "}
+          </p>
+          <p>
+            There are millions of companies in the UK. You need to regularly go
+            through all of them to find out which have been recently
+            incorporated.
+          </p>
+          <p>
+            Of the tens of thousands of companies you may find, you then have to
+            filter for those that match your ideal customer profile.
+          </p>
+          <p>
+            Finally, you need to figure out a way to grab their attention. You
+            can’t rely on email or phone number as they won’t be usually
+            publicly available for a newly-formed business.
+          </p>
+          <p>
+            That’s where our direct mail service comes in. All you need to do
+            is:
+          </p>
+          <ul>
+            <li>
+              tell us the industry and geographic location of your ideal
+              customer
+            </li>
+            <li>provide us with the copy of your direct mail</li>
+            <li>pay for the number of letters you wish to send</li>
+          </ul>
+          <p>And that’s it! We’ll do the mailing for you.</p>
+        </Container>
         <p>Interested? Get in touch!</p>
       </main>
     </>
