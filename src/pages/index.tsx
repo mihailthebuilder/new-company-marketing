@@ -11,12 +11,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Container maxWidth="md" sx={{ textAlign: "center" }}>
+        <Container
+          maxWidth="md"
+          sx={{ textAlign: "center", marginTop: "10rem", marginBottom: "6rem" }}
+        >
           <Typography variant="h1" fontSize="3rem" fontWeight="bold">
             Be the first to speak to new business owners with our{" "}
             <span style={{ display: "inline-block" }}>direct mail service</span>
           </Typography>
-          <Button>Join our free trial</Button>
+          <Button
+            variant="contained"
+            sx={{
+              color: "white",
+              marginTop: "3rem",
+              padding: "0.8rem 2rem",
+              fontSize: "1.2rem",
+            }}
+          >
+            Join our free trial
+          </Button>
         </Container>
         <Container maxWidth="sm">
           <Typography
@@ -24,6 +37,7 @@ export default function Home() {
             component="h2"
             fontWeight="bold"
             textAlign="center"
+            marginBottom="3rem"
           >
             Why use us?
           </Typography>
