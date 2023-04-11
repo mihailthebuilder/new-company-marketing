@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Container, Typography, Button } from "@mui/material";
+import EnquiryForm from "@/components/EnquiryForm";
 
 export default function Home() {
   return (
@@ -30,7 +31,7 @@ export default function Home() {
             Join our free trial
           </Button>
         </Container>
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" sx={{ marginBottom: "4rem" }}>
           <Typography
             variant="h4"
             component="h2"
@@ -42,7 +43,7 @@ export default function Home() {
           </Typography>
           <p>
             You know how important it is to be first to your customers. But it’s
-            really hard to do that when your customer is a new business owner.{" "}
+            really hard to do that when your customer is a new business owner!{" "}
           </p>
           <p>
             There are millions of companies in the UK. You need to regularly go
@@ -62,7 +63,7 @@ export default function Home() {
             That’s where our direct mail service comes in. All you need to do
             is:
           </p>
-          <ul>
+          <ul style={{ paddingLeft: "1rem" }}>
             <li>
               tell us the industry and geographic location of your ideal
               customer
@@ -72,7 +73,22 @@ export default function Home() {
           </ul>
           <p>And that’s it! We’ll do the mailing for you.</p>
         </Container>
-        <p>Interested? Get in touch!</p>
+        <Container maxWidth="sm">
+          <Typography
+            variant="h4"
+            component="h2"
+            fontWeight="bold"
+            textAlign="center"
+            marginBottom="3rem"
+          >
+            Sign up for a free trial
+          </Typography>
+          <p>
+            We're running a free trial with a limited number of users. Enter
+            your email below:
+          </p>
+          <EnquiryForm />
+        </Container>
       </main>
     </>
   );
