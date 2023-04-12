@@ -86,22 +86,6 @@ export default function Home() {
             <li>pay for the number of letters you wish to send</li>
           </ul>
           <p>And that&apos;s it! We&apos;ll do the mailing for you.</p>
-          <Box textAlign="center" marginTop="2rem">
-            <Button
-              variant="outlined"
-              href="#signup"
-              sx={{
-                padding: "0.8rem 2rem",
-                fontSize: "1.2rem",
-                borderWidth: "2px",
-                ":hover": {
-                  borderWidth: "2px",
-                },
-              }}
-            >
-              Join our free trial
-            </Button>
-          </Box>
         </Container>
       </main>
     </>
