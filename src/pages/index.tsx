@@ -27,9 +27,23 @@ export default function Home() {
         <NavBar />
         <Container
           maxWidth="md"
-          sx={{ textAlign: "center", marginTop: "10rem", marginBottom: "2rem" }}
+          sx={{
+            textAlign: "center",
+            marginTop: {
+              md: "10rem",
+              xs: "4rem",
+            },
+            marginBottom: {
+              md: "10rem",
+              xs: "4rem",
+            },
+          }}
         >
-          <Typography variant="h1" fontSize="3rem" fontWeight="bold">
+          <Typography
+            variant="h1"
+            fontSize={{ md: "3rem", xs: "1.7rem" }}
+            fontWeight="bold"
+          >
             Be the{" "}
             <Box component="span" color="secondary.main">
               first
