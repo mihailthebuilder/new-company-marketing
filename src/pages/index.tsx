@@ -93,7 +93,7 @@ export default function Home() {
             Why use us?
           </Typography>
           <p>
-            You know how important it is to be first to your customers. But it’s
+            You know how important it is to be first to your customers. But it's
             really hard to do that when your customer is a new business owner!{" "}
           </p>
           <p>
@@ -107,11 +107,11 @@ export default function Home() {
           </p>
           <p>
             Finally, you need to figure out a way to grab their attention. You
-            can’t rely on email or phone number as they won’t be usually
+            can't rely on email or phone number as they won't be usually
             publicly available for a newly-formed business.
           </p>
           <p>
-            That’s where our direct mail service comes in. All you need to do
+            That's where our direct mail service comes in. All you need to do
             is:
           </p>
           <ul style={{ paddingLeft: "1rem" }}>
@@ -122,7 +122,7 @@ export default function Home() {
             <li>provide us with the copy of your direct mail</li>
             <li>pay for the number of letters you wish to send</li>
           </ul>
-          <p>And that’s it! We’ll do the mailing for you.</p>
+          <p>And that's it! We'll do the mailing for you.</p>
         </Container>
         <Container maxWidth="sm" id="signup">
           <Typography
