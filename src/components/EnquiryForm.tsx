@@ -15,7 +15,17 @@ export default function EnquiryForm() {
         />
       </Grid>
       <Grid md={4} xs={12}>
-        <Button variant="contained">Submit</Button>
+        <Button
+          fullWidth
+          sx={{
+            height: "100%",
+            fontSize: "1.3rem",
+            ":hover": { bgcolor: "#FEBE5D" },
+          }}
+          variant="contained"
+        >
+          Submit
+        </Button>
       </Grid>
     </Grid>
   );
