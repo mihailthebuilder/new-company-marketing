@@ -7,8 +7,9 @@ import {
   Toolbar,
   Link,
   Box,
+  Grid,
+  TextField,
 } from "@mui/material";
-import EnquiryForm from "@/components/EnquiryForm";
 import { Oswald } from "next/font/google";
 
 const oswald = Oswald({ subsets: ["latin"] });
@@ -23,42 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <AppBar
-          position="absolute"
-          color="default"
-          elevation={0}
-          sx={{
-            position: "relative",
-            borderBottom: (t) => `1px solid ${t.palette.divider}`,
-          }}
-        >
-          <Toolbar sx={{ flexWrap: "wrap" }}>
-            <Typography
-              fontWeight="bold"
-              className={oswald.className}
-              variant="h6"
-              color="inherit"
-              sx={{
-                fontStyle: "italic !important",
-                overflow: "inherit !important",
-              }}
-              flexGrow="1"
-              noWrap
-            >
-              CompanyHound
-            </Typography>
-            <nav>
-              <Link
-                underline="none"
-                fontWeight="bold"
-                color="text.primary"
-                href="#signup"
-              >
-                Contact us
-              </Link>
-            </nav>
-          </Toolbar>
-        </AppBar>
+        <NavBar />
         <Container
           maxWidth="md"
           sx={{ textAlign: "center", marginTop: "10rem", marginBottom: "6rem" }}
@@ -80,9 +46,9 @@ export default function Home() {
               marginTop: "3rem",
               padding: "0.8rem 2rem",
               fontSize: "1.2rem",
-              borderWidth: "3px",
+              borderWidth: "2px",
               ":hover": {
-                borderWidth: "3px",
+                borderWidth: "2px",
               },
             }}
           >
@@ -150,5 +116,76 @@ export default function Home() {
         </Container>
       </main>
     </>
+  );
+}
+
+const NavBar = () => {
+  return (
+    <AppBar
+      position="absolute"
+      color="default"
+      elevation={0}
+      sx={{
+        position: "relative",
+        borderBottom: (t) => `1px solid ${t.palette.divider}`,
+      }}
+    >
+      <Toolbar sx={{ flexWrap: "wrap" }}>
+        <Typography
+          fontWeight="bold"
+          className={oswald.className}
+          variant="h6"
+          color="inherit"
+          sx={{
+            fontStyle: "italic !important",
+            overflow: "inherit !important",
+          }}
+          flexGrow="1"
+          noWrap
+        >
+          CompanyHound
+        </Typography>
+        <nav>
+          <Link
+            underline="none"
+            fontWeight="bold"
+            color="text.primary"
+            href="#signup"
+          >
+            Contact us
+          </Link>
+        </nav>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+function EnquiryForm() {
+  return (
+    <Grid component="form" container spacing={2}>
+      <Grid md={8} xs={12}>
+        <TextField
+          required
+          fullWidth
+          id="email"
+          label="Email Address"
+          name="email"
+          autoComplete="email"
+        />
+      </Grid>
+      <Grid md={4} xs={12}>
+        <Button
+          fullWidth
+          sx={{
+            height: "100%",
+            fontSize: "1.3rem",
+            ":hover": { bgcolor: "#FEBE5D" },
+          }}
+          variant="contained"
+        >
+          Submit
+        </Button>
+      </Grid>
+    </Grid>
   );
 }
