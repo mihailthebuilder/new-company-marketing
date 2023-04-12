@@ -6,6 +6,7 @@ import {
   AppBar,
   Toolbar,
   Link,
+  Box,
 } from "@mui/material";
 import EnquiryForm from "@/components/EnquiryForm";
 import { Oswald } from "next/font/google";
@@ -63,8 +64,14 @@ export default function Home() {
           sx={{ textAlign: "center", marginTop: "10rem", marginBottom: "6rem" }}
         >
           <Typography variant="h1" fontSize="3rem" fontWeight="bold">
-            Be the first to speak to new business owners with our{" "}
-            <span style={{ display: "inline-block" }}>direct mail service</span>
+            Be the{" "}
+            <Box component="span" color="secondary.main">
+              first
+            </Box>{" "}
+            to speak to new business owners with our{" "}
+            <Box component="span" display="inline-block" color="secondary.main">
+              direct mail service
+            </Box>
           </Typography>
           <Button
             variant="outlined"
