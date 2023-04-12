@@ -130,32 +130,34 @@ const NavBar = () => {
         borderBottom: (t) => `1px solid ${t.palette.divider}`,
       }}
     >
-      <Toolbar sx={{ flexWrap: "wrap" }}>
-        <Typography
-          fontWeight="bold"
-          className={oswald.className}
-          variant="h6"
-          color="inherit"
-          sx={{
-            fontStyle: "italic !important",
-            overflow: "inherit !important",
-          }}
-          flexGrow="1"
-          noWrap
-        >
-          CompanyHound
-        </Typography>
-        <nav>
-          <Link
-            underline="none"
+      <Container maxWidth="xl">
+        <Toolbar sx={{ flexWrap: "wrap" }}>
+          <Typography
             fontWeight="bold"
-            color="text.primary"
-            href="#signup"
+            className={oswald.className}
+            variant="h6"
+            color="inherit"
+            sx={{
+              fontStyle: "italic !important",
+              overflow: "inherit !important",
+            }}
+            flexGrow="1"
+            noWrap
           >
-            Contact us
-          </Link>
-        </nav>
-      </Toolbar>
+            CompanyHound
+          </Typography>
+          <nav>
+            <Link
+              underline="none"
+              fontWeight="bold"
+              color="text.primary"
+              href="#signup"
+            >
+              Contact us
+            </Link>
+          </nav>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 };
