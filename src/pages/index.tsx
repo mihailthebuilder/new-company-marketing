@@ -26,6 +26,10 @@ export default function Home() {
               marginTop: "3rem",
               padding: "0.8rem 2rem",
               fontSize: "1.2rem",
+              borderWidth: "3px",
+              ":hover": {
+                borderWidth: "3px",
+              },
             }}
           >
             Join our free trial
