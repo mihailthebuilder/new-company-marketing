@@ -119,7 +119,7 @@ export default function Home() {
   );
 }
 
-const NavBar = () => {
+function NavBar() {
   return (
     <AppBar
       position="absolute"
@@ -160,7 +160,7 @@ const NavBar = () => {
       </Container>
     </AppBar>
   );
-};
+}
 
 function EnquiryForm() {
   return (
