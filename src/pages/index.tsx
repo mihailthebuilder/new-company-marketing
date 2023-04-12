@@ -68,6 +68,7 @@ export default function Home() {
           </Typography>
           <Button
             variant="outlined"
+            href="#signup"
             sx={{
               marginTop: "3rem",
               padding: "0.8rem 2rem",
