@@ -87,6 +87,14 @@ export default function Home() {
           </ul>
           <p>And that&apos;s it! We&apos;ll do the mailing for you.</p>
         </Container>
+        <Box
+          marginTop="5rem"
+          fontSize="0.8rem"
+          marginBottom="1.5rem"
+          textAlign="center"
+        >
+          Copyright © Tuxedo Software Limited {new Date().getFullYear()}
+        </Box>
       </main>
     </>
   );
