@@ -1,6 +1,9 @@
 import Head from "next/head";
-import { Container, Typography, Button } from "@mui/material";
+import { Container, Typography, Button, AppBar, Toolbar } from "@mui/material";
 import EnquiryForm from "@/components/EnquiryForm";
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -12,6 +15,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <AppBar
+          position="absolute"
+          color="default"
+          elevation={0}
+          sx={{
+            position: "relative",
+            borderBottom: (t) => `1px solid ${t.palette.divider}`,
+          }}
+        >
+          <Toolbar>
+            <Typography
+              fontWeight="bold"
+              className={oswald.className}
+              variant="h6"
+              color="inherit"
+              sx={{
+                fontStyle: "italic !important",
+                overflow: "inherit !important",
+              }}
+              noWrap
+            >
+              CompanyHound
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <Container
           maxWidth="md"
           sx={{ textAlign: "center", marginTop: "10rem", marginBottom: "6rem" }}
