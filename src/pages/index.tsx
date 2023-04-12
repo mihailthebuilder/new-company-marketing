@@ -7,10 +7,10 @@ import {
   Toolbar,
   Link,
   Box,
-  Grid,
   TextField,
 } from "@mui/material";
 import { Oswald } from "next/font/google";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const oswald = Oswald({ subsets: ["latin"] });
 
@@ -27,7 +27,7 @@ export default function Home() {
         <NavBar />
         <Container
           maxWidth="md"
-          sx={{ textAlign: "center", marginTop: "10rem", marginBottom: "6rem" }}
+          sx={{ textAlign: "center", marginTop: "10rem", marginBottom: "2rem" }}
         >
           <Typography variant="h1" fontSize="3rem" fontWeight="bold">
             Be the{" "}
@@ -39,23 +39,12 @@ export default function Home() {
               direct mail service
             </Box>
           </Typography>
-          <Button
-            variant="outlined"
-            href="#signup"
-            sx={{
-              marginTop: "3rem",
-              padding: "0.8rem 2rem",
-              fontSize: "1.2rem",
-              borderWidth: "2px",
-              ":hover": {
-                borderWidth: "2px",
-              },
-            }}
-          >
-            Join our free trial
-          </Button>
         </Container>
-        <Container maxWidth="sm" sx={{ marginBottom: "4rem" }}>
+        <EnquiryForm />
+        <Container
+          maxWidth="sm"
+          sx={{ marginBottom: "4rem", marginTop: "5rem" }}
+        >
           <Typography
             variant="h4"
             component="h2"
@@ -97,22 +86,22 @@ export default function Home() {
             <li>pay for the number of letters you wish to send</li>
           </ul>
           <p>And that&apos;s it! We&apos;ll do the mailing for you.</p>
-        </Container>
-        <Container maxWidth="sm" id="signup">
-          <Typography
-            variant="h4"
-            component="h2"
-            fontWeight="bold"
-            textAlign="center"
-            marginBottom="3rem"
-          >
-            Sign up for a free trial
-          </Typography>
-          <p>
-            We&apos;re running a free trial with a limited number of users.
-            Enter your email below:
-          </p>
-          <EnquiryForm />
+          <Box textAlign="center" marginTop="2rem">
+            <Button
+              variant="outlined"
+              href="#signup"
+              sx={{
+                padding: "0.8rem 2rem",
+                fontSize: "1.2rem",
+                borderWidth: "2px",
+                ":hover": {
+                  borderWidth: "2px",
+                },
+              }}
+            >
+              Join our free trial
+            </Button>
+          </Box>
         </Container>
       </main>
     </>
@@ -164,30 +153,36 @@ function NavBar() {
 
 function EnquiryForm() {
   return (
-    <Grid component="form" container spacing={2}>
-      <Grid md={8} xs={12}>
-        <TextField
-          required
-          fullWidth
-          id="email"
-          label="Email Address"
-          name="email"
-          autoComplete="email"
-        />
+    <Container maxWidth="sm" id="signup">
+      <p style={{ textAlign: "center", fontSize: "1.3rem" }}>
+        We&apos;re running a free trial with a limited number of users. Enter
+        your email below to join the waitlist:
+      </p>
+      <Grid component="form" container spacing={2} marginTop="1.5rem">
+        <Grid md={8} xs={12}>
+          <TextField
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+          />
+        </Grid>
+        <Grid md={4} xs={12}>
+          <Button
+            fullWidth
+            sx={{
+              height: "100%",
+              fontSize: "1.3rem",
+              ":hover": { bgcolor: "#FEBE5D" },
+            }}
+            variant="contained"
+          >
+            Submit
+          </Button>
+        </Grid>
       </Grid>
-      <Grid md={4} xs={12}>
-        <Button
-          fullWidth
-          sx={{
-            height: "100%",
-            fontSize: "1.3rem",
-            ":hover": { bgcolor: "#FEBE5D" },
-          }}
-          variant="contained"
-        >
-          Submit
-        </Button>
-      </Grid>
-    </Grid>
+    </Container>
   );
 }
