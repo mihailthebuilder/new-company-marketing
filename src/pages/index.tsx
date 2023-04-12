@@ -1,5 +1,12 @@
 import Head from "next/head";
-import { Container, Typography, Button, AppBar, Toolbar } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Button,
+  AppBar,
+  Toolbar,
+  Link,
+} from "@mui/material";
 import EnquiryForm from "@/components/EnquiryForm";
 import { Oswald } from "next/font/google";
 
@@ -24,7 +31,7 @@ export default function Home() {
             borderBottom: (t) => `1px solid ${t.palette.divider}`,
           }}
         >
-          <Toolbar>
+          <Toolbar sx={{ flexWrap: "wrap" }}>
             <Typography
               fontWeight="bold"
               className={oswald.className}
@@ -34,10 +41,21 @@ export default function Home() {
                 fontStyle: "italic !important",
                 overflow: "inherit !important",
               }}
+              flexGrow="1"
               noWrap
             >
               CompanyHound
             </Typography>
+            <nav>
+              <Link
+                underline="none"
+                fontWeight="bold"
+                color="text.primary"
+                href="#signup"
+              >
+                Contact us
+              </Link>
+            </nav>
           </Toolbar>
         </AppBar>
         <Container
@@ -105,7 +123,7 @@ export default function Home() {
           </ul>
           <p>And that’s it! We’ll do the mailing for you.</p>
         </Container>
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" id="signup">
           <Typography
             variant="h4"
             component="h2"
