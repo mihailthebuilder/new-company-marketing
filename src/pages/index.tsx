@@ -34,8 +34,8 @@ export default function Home() {
               xs: "4rem",
             },
             marginBottom: {
-              md: "10rem",
-              xs: "4rem",
+              md: "3rem",
+              xs: "2rem",
             },
           }}
         >
@@ -60,11 +60,11 @@ export default function Home() {
           sx={{ marginBottom: "4rem", marginTop: "5rem" }}
         >
           <Typography
-            variant="h4"
-            component="h2"
+            variant="h2"
             fontWeight="bold"
             textAlign="center"
-            marginBottom="3rem"
+            marginBottom={{ md: "3rem", xs: "2rem" }}
+            fontSize={{ md: "2.5rem", xs: "1.5rem" }}
           >
             Why use us?
           </Typography>
@@ -102,7 +102,7 @@ export default function Home() {
           <p>And that&apos;s it! We&apos;ll do the mailing for you.</p>
         </Container>
         <Box
-          marginTop="5rem"
+          marginTop={{ md: "5rem", xs: 0 }}
           fontSize="0.8rem"
           marginBottom="1.5rem"
           textAlign="center"
@@ -160,10 +160,12 @@ function NavBar() {
 function EnquiryForm() {
   return (
     <Container maxWidth="sm" id="signup">
-      <p style={{ textAlign: "center", fontSize: "1.3rem" }}>
-        We&apos;re running a free trial with a limited number of users. Enter
-        your email below to join the waitlist:
-      </p>
+      <Box textAlign="center" fontSize={{ md: "1.3rem", xs: "1.1rem" }}>
+        <p>
+          We&apos;re running a free trial with a limited number of users. Enter
+          your email below to join the waitlist:
+        </p>
+      </Box>
       <Grid component="form" container spacing={2} marginTop="1.5rem">
         <Grid md={8} xs={12}>
           <TextField
