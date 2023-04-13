@@ -8,9 +8,12 @@ import {
   Link,
   Box,
   TextField,
+  Alert,
+  CircularProgress,
 } from "@mui/material";
 import { Oswald } from "next/font/google";
 import Grid from "@mui/material/Unstable_Grid2";
+import { useState } from "react";
 
 const oswald = Oswald({ subsets: ["latin"] });
 
@@ -161,6 +164,50 @@ function NavBar() {
 }
 
 function EnquiryForm() {
+  const [emailInput, setEmailInput] = useState("");
+  const [messageAfterSubmit, setMessageAfterSubmit] = useState<JSX.Element>();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmitEnquiry = (event: React.FormEvent) => {
+    event.preventDefault();
+    setIsLoading(true);
+    setMessageAfterSubmit(undefined);
+
+    fetch(`${EMAIL_API_URL}`, {
+      method: "POST",
+      body: JSON.stringify({
+        EmailAddress: emailInput,
+        Title: "CompanyHound - New Enquiry",
+      }),
+    })
+      .then((response) => {
+        if (response.status !== 200) {
+          throw Error(
+            `error response from API, status ${response.status}, message ${response.statusText}`
+          );
+        }
+
+        setMessageAfterSubmit(SuccessMessage);
+      })
+      .catch((err) => {
+        setMessageAfterSubmit(ErrorMessage);
+        console.error(err);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+  if (isLoading) {
+    return <CircularProgress />;
+  }
+
+  if (messageAfterSubmit) {
+    return (
+      <Box display="flex" flexDirection="column" alignItems="center">
+        {messageAfterSubmit}
+      </Box>
+    );
+  }
+
   return (
     <Container maxWidth="sm" id="signup">
       <Box textAlign="center" fontSize={{ md: "1.3rem", xs: "1.1rem" }}>
@@ -169,7 +216,13 @@ function EnquiryForm() {
           your email below to join the waitlist:
         </p>
       </Box>
-      <Grid component="form" container spacing={2} marginTop="1.5rem">
+      <Grid
+        component="form"
+        container
+        spacing={2}
+        marginTop="1.5rem"
+        onSubmit={handleSubmitEnquiry}
+      >
         <Grid md={8} xs={12}>
           <TextField
             required
@@ -178,6 +231,8 @@ function EnquiryForm() {
             label="Email Address"
             name="email"
             autoComplete="email"
+            value={emailInput}
+            onChange={(event) => setEmailInput(event.target.value)}
           />
         </Grid>
         <Grid md={4} xs={12}>
@@ -197,3 +252,22 @@ function EnquiryForm() {
     </Container>
   );
 }
+
+const { EMAIL_API_URL } = process.env;
+
+const ErrorMessage = (
+  <Alert
+    severity="error"
+    sx={{
+      marginTop: "2rem",
+    }}
+  >
+    Unable to submit enquiry at the moment.
+  </Alert>
+);
+
+const SuccessMessage = (
+  <Alert severity="success">
+    Thanks for reaching out! We'll get back to you ASAP.
+  </Alert>
+);
