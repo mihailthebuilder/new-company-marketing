@@ -273,6 +273,6 @@ const ErrorMessage = (
 
 const SuccessMessage = (
   <Alert severity="success">
-    Thanks for reaching out! We'll get back to you ASAP.
+    Thanks for reaching out! We&apos;ll get back to you ASAP.
   </Alert>
 );
