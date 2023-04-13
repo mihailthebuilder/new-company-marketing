@@ -56,7 +56,7 @@ export default function Home() {
             </Box>{" "}
             to speak to new business owners with our{" "}
             <Box component="span" display="inline-block" color="secondary.main">
-              direct mail service
+              postal mail service
             </Box>
           </Typography>
         </Container>
