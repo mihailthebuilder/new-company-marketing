@@ -96,7 +96,7 @@ export default function Home() {
             usually publicly available for a newly-formed business.
           </p>
           <p>
-            That&apos;s where our direct mail service comes in. All you need to
+            That&apos;s where our postal mail service comes in. All you need to
             do is:
           </p>
           <ul style={{ paddingLeft: "1rem" }}>
@@ -104,7 +104,7 @@ export default function Home() {
               tell us the industry and geographic location of your ideal
               customer
             </li>
-            <li>provide us with the copy of your direct mail</li>
+            <li>provide us with the design and copy of your letter</li>
             <li>pay for the number of letters you wish to send</li>
           </ul>
           <p>And that&apos;s it! We&apos;ll do the mailing for you.</p>
