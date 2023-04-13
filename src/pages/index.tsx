@@ -60,7 +60,9 @@ export default function Home() {
             </Box>
           </Typography>
         </Container>
-        <EnquiryForm />
+        <Container maxWidth="sm" id="signup" sx={{ textAlign: "center" }}>
+          <EnquiryForm />
+        </Container>
         <Container
           maxWidth="sm"
           sx={{ marginBottom: "4rem", marginTop: "5rem" }}
@@ -168,12 +170,16 @@ function EnquiryForm() {
   const [messageAfterSubmit, setMessageAfterSubmit] = useState<JSX.Element>();
   const [isLoading, setIsLoading] = useState(false);
 
+  const emailApiUrl = process.env.NEXT_PUBLIC_EMAIL_API_URL
+    ? process.env.NEXT_PUBLIC_EMAIL_API_URL
+    : "http://localhost:8080/email";
+
   const handleSubmitEnquiry = (event: React.FormEvent) => {
     event.preventDefault();
     setIsLoading(true);
     setMessageAfterSubmit(undefined);
 
-    fetch(`${EMAIL_API_URL}`, {
+    fetch(emailApiUrl, {
       method: "POST",
       body: JSON.stringify({
         EmailAddress: emailInput,
@@ -209,7 +215,7 @@ function EnquiryForm() {
   }
 
   return (
-    <Container maxWidth="sm" id="signup">
+    <>
       <Box textAlign="center" fontSize={{ md: "1.3rem", xs: "1.1rem" }}>
         <p>
           We&apos;re running a free trial with a limited number of users. Enter
@@ -244,16 +250,15 @@ function EnquiryForm() {
               ":hover": { bgcolor: "#FEBE5D" },
             }}
             variant="contained"
+            type="submit"
           >
             Submit
           </Button>
         </Grid>
       </Grid>
-    </Container>
+    </>
   );
 }
-
-const { EMAIL_API_URL } = process.env;
 
 const ErrorMessage = (
   <Alert
