@@ -59,10 +59,14 @@ export default function Home() {
               postal mail service
             </Box>
           </Typography>
-          <p style={{ fontSize: "1.5rem" }}>
+          <Box
+            component="p"
+            textAlign="center"
+            fontSize={{ md: "1.3rem", xs: "1.1rem" }}
+          >
             We keep track of all newly-incorporated companies in the UK and help
             you send them a letter about your business.
-          </p>
+          </Box>
         </Container>
         <Container maxWidth="sm" id="signup" sx={{ textAlign: "center" }}>
           <EnquiryForm />
