@@ -59,6 +59,10 @@ export default function Home() {
               postal mail service
             </Box>
           </Typography>
+          <p style={{ fontSize: "1.5rem" }}>
+            We keep track of all newly-incorporated companies in the UK and help
+            you send them a letter about your business.
+          </p>
         </Container>
         <Container maxWidth="sm" id="signup" sx={{ textAlign: "center" }}>
           <EnquiryForm />
@@ -216,11 +220,13 @@ function EnquiryForm() {
 
   return (
     <>
-      <Box textAlign="center" fontSize={{ md: "1.3rem", xs: "1.1rem" }}>
-        <p>
-          We&apos;re running a free trial with a limited number of users. Enter
-          your email below to join the waitlist:
-        </p>
+      <Box
+        component="p"
+        textAlign="center"
+        fontSize={{ md: "1.3rem", xs: "1.1rem" }}
+      >
+        We&apos;re running a free trial with a limited number of users. Enter
+        your email below to join the waitlist:
       </Box>
       <Grid
         component="form"
